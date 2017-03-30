@@ -20,6 +20,8 @@ One's profession should not be measured by the actions that are taken, but rathe
 
 Anyone can program, not everyone can develop scalable, robust, and maintainable software. Let's aim for that...
 
+You may find a list of useful books and [resources here](https://github.com/kPatch/awesome-developer-resources/blob/master/README.md#software-engineering).
+
 ### Styleguides
 
 - [Arduino](https://www.arduino.cc/en/Reference/StyleGuide)
