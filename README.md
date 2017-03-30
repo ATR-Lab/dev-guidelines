@@ -72,7 +72,13 @@ The following rules must be followed:
 
 ### Tools
 
+Know your tools, from debuggers, to profilers, to IDEs.
+
 ### IDEs
+
+#### IntelliJ
+
+#### Eclipse
 
 ## Hardware
 
