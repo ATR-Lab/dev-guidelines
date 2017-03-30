@@ -61,6 +61,15 @@ The following rules must be followed:
 - [How to Write a Git Commit Message](http://chris.beams.io/posts/git-commit/)
 - [How to Use Git with XCode](https://www.youtube.com/watch?v=9jeQQ7xNb4U )
 
+#### Gitignore
+
+[What is .gitignore?](http://stackoverflow.com/questions/27850222/what-is-gitignore-exactly/27850270)
+
+- A collection of useful [.gitignore templates](https://github.com/github/gitignore)
+- The [Ignoring Files chapter](https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository#Ignoring-Files) of the Pro Git book.
+- The [Ignoring Files article](https://help.github.com/articles/ignoring-files/) on the GitHub Help site.
+- The [gitignore(5)](https://git-scm.com/docs/gitignore) manual page.
+
 ### Tools
 
 ### IDEs
