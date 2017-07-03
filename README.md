@@ -5,7 +5,7 @@ Software and hardware development guidelines
 
 - [Software](#project-structure)
 	- [Styleguides](#styleguides)
-	- [Documentation](documentation)
+	- [Documentation](#documentation)
 	- [Dependency Management](#dependency-management)
 	- [Version Control](#version-control)
 	- [Tools](#tools)
@@ -37,6 +37,9 @@ You may find a list of useful books and [resources here](https://github.com/kPat
 ### Documentation
 
 Self describing, terse code should be the norm. But, often times the complexity .... 
+
+- [Beginners Guide To Docs](http://www.writethedocs.org/guide/writing/beginners-guide-to-docs/)
+- [RTFM? How to write a manual worth reading](https://opensource.com/business/15/5/write-better-docs)
 
 ### Dependency Management
 
