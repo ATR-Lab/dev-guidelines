@@ -32,6 +32,7 @@ You may find a list of useful books and [resources here](https://github.com/kPat
 - [JavaScript](https://github.com/feross/standard)
 - [MATLAB](https://sites.google.com/site/matlabstyleguidelines/)
 - [Python](https://google.github.io/styleguide/pyguide.html)
+- [Solidity](http://solidity.readthedocs.io/en/develop/style-guide.html)
 
 ### Documentation
 
