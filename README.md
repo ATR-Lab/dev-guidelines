@@ -44,19 +44,21 @@ Self describing, terse code should be the norm. But, often times the complexity 
 
 ### Version Control
 
-The following rules must be followed:
+We use [Git](https://git-scm.com/) as our version control system [(VCS)](https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control) and [GitHub](https://github.com/ATR-Lab) as our open-source Git hosting service.  
+Below are some quick rules to follow when working with a version control system, specifically Git:
 
-1. Make sure the build succeeds before committing
-...Rationale: Broken code should not be committed
+1. Make sure the build succeeds before committing.  
+**Rationale**: Broken code should not be committed.
 
-2. Create feature branches
-...Rationale: Changes to a branch don’t affect other developers on the team. This is a good thing because a feature under development can create instability.
+2. Create feature branches.  
+**Rationale**: Changes to a branch don’t affect other developers on the team. This is a good thing because a feature under development can create instability.
 
-3. Pull down the latest changes before beginning to code
-...Rationale: Keep you local version up to date. This is crucial if you’re working on feature branch, don’t let your branch diverge too far from the master branch
+3. Pull down the latest changes before beginning to code.  
+**Rationale**: Keep you local version up to date. This is crucial if you’re working on feature branch, don’t let your branch diverge too far from the master branch.
 
-4. Use meaningful and succinct git messages
-...Rationale: “A commit message shows whether a developer is a good collaborator”. A project’s long-term success rests (among other things) on its maintainability and being able to review others’ commits and pull requests with ease. This drives efficiency
+4. Use meaningful and succinct git messages.  
+**Rationale**: “A commit message shows whether a developer is a good collaborator”. **A project’s long-term success rests (among other things) on its maintainability** and being able to review others’ commits and pull requests with ease.  
+This drives efficiency.
 
 - [A Successful Git Branching Model](http://nvie.com/posts/a-successful-git-branching-model/)
 - [How to Write a Git Commit Message](http://chris.beams.io/posts/git-commit/)
