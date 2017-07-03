@@ -61,8 +61,24 @@ Below are some quick rules to follow when working with a version control system,
 This drives efficiency.
 
 - [A Successful Git Branching Model](http://nvie.com/posts/a-successful-git-branching-model/)
+
+#### Git Messages
+
+When [committing](http://dont-be-afraid-to-commit.readthedocs.io/en/latest/git/commandlinegit.html) code into a Git repository, you will have to write a message describing your code changes.  
+It is crucial that we make these messages concise and consistent. A well-crafted commit message can tell other developers right away why your code changes matter or why they took place.  
+  
+Chris Beams has a great [post](https://chris.beams.io/posts/git-commit/) that summarizes the importance of a well-crafted commit message, along with the rationale behind it. Below are the seven rules he writes in his post, check out his post for more information.
+    
+**The seven rules of a great Git commit message**  
+1. Separate subject from body with a blank line
+2. Limit the subject line to 50 characters
+3. Capitalize the subject line
+4. Do not end the subject line with a period
+5. Use the imperative mood in the subject line
+6. Wrap the body at 72 characters
+7. Use the body to explain what and why vs. how
+
 - [How to Write a Git Commit Message](http://chris.beams.io/posts/git-commit/)
-- [How to Use Git with XCode](https://www.youtube.com/watch?v=9jeQQ7xNb4U )
 
 #### Gitignore
 
