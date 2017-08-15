@@ -107,6 +107,11 @@ Know your tools, from debuggers, to profilers, to IDEs.
 
 #### ROS
 - Check what packages are available before development. http://www.ros.org/browse/list.php
+- Packages vs Nodes
+  - https://answers.ros.org/question/9133/packages-vs-nodes/
+  - https://answers.ros.org/question/11835/when-should-i-split-my-code-into-multiple-packages-and-whats-a-good-way-to-split-it/
+- Standard Units of Measure and Coordinate Conventions
+  - http://www.ros.org/reps/rep-0103.html
 
 ## Hardware
 
