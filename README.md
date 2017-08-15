@@ -10,6 +10,7 @@ Software and hardware development guidelines
 	- [Version Control](#version-control)
 	- [Tools](#tools)
 	- [IDEs](#ides)
+	- [Middleware and Frameworks](#middleware-and-frameworks)
 - [Hardware](#hardware)
 
 
@@ -101,6 +102,11 @@ Know your tools, from debuggers, to profilers, to IDEs.
 #### IntelliJ
 
 #### Eclipse
+
+### Middleware and Frameworks
+
+#### ROS
+- Check what packages are available before development. http://www.ros.org/browse/list.php
 
 ## Hardware
 
