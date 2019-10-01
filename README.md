@@ -8,6 +8,7 @@ Software and hardware development guidelines
 	- [Documentation](#documentation)
 	- [Dependency Management](#dependency-management)
 	- [Version Control](#version-control)
+	- [Software Releases](#software-releases)
 	- [Tools](#tools)
 	- [IDEs](#ides)
 	- [Middleware and Frameworks](#middleware-and-frameworks)
@@ -92,6 +93,13 @@ Chris Beams has a great [post](https://chris.beams.io/posts/git-commit/) that su
 - The [Ignoring Files chapter](https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository#Ignoring-Files) of the Pro Git book.
 - The [Ignoring Files article](https://help.github.com/articles/ignoring-files/) on the GitHub Help site.
 - The [gitignore(5)](https://git-scm.com/docs/gitignore) manual page.
+
+### Software Releases
+- [GitHub: Creating Releases](https://help.github.com/en/articles/creating-releases)
+- [Drupal: Release Types](https://www.drupal.org/node/467020)
+- [Drupal: Release - rc, alpha, beta, dev](https://drupal.stackexchange.com/questions/99612/what-does-rc-stand-for-when-to-use-alpha-beta-and-dev-instead)
+- [Drupal: Release Naming Conventions](https://www.drupal.org/node/1015226)
+- [StackOverflow: Release Title is Same as Release Version](https://softwareengineering.stackexchange.com/questions/345006/why-popular-repositories-use-release-version-as-a-release-title-in-github)
 
 ### Tools
 
