@@ -8,7 +8,7 @@ Software and hardware development guidelines
 	- [Documentation](#documentation)
 	- [Dependency Management](#dependency-management)
 	- [Version Control](#version-control)
-		- [GitHub](#github)
+	- [GitHub](#github)
 	- [Software Releases](#software-releases)
 	- [Tools](#tools)
 	- [IDEs](#ides)
