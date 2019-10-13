@@ -8,6 +8,7 @@ Software and hardware development guidelines
 	- [Documentation](#documentation)
 	- [Dependency Management](#dependency-management)
 	- [Version Control](#version-control)
+		- [GitHub](#github)
 	- [Software Releases](#software-releases)
 	- [Tools](#tools)
 	- [IDEs](#ides)
@@ -93,6 +94,9 @@ Chris Beams has a great [post](https://chris.beams.io/posts/git-commit/) that su
 - The [Ignoring Files chapter](https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository#Ignoring-Files) of the Pro Git book.
 - The [Ignoring Files article](https://help.github.com/articles/ignoring-files/) on the GitHub Help site.
 - The [gitignore(5)](https://git-scm.com/docs/gitignore) manual page.
+
+### GitHub
+- [Referencing / closing issues using keywords](https://help.github.com/en/articles/closing-issues-using-keywords)
 
 ### Software Releases
 - [GitHub: Creating Releases](https://help.github.com/en/articles/creating-releases)
