@@ -1,0 +1,54 @@
+# SwiftLint settings for ATR Lab Swift projects (visionOS, watchOS, iOS, macOS).
+#
+# swift-format (the .swift-format file next to this one) owns layout; SwiftLint
+# checks naming, safety and API use. The first three rules below are off because
+# swift-format's output breaks them, so the two tools never disagree.
+# Tested with SwiftLint 0.65.1 and the swift-format bundled with Swift 6.4
+# (Sept. 30, 2026). Rule reference: https://realm.github.io/SwiftLint/rule-directory.html
+
+disabled_rules:
+  - opening_brace                 # swift-format puts `{` on its own line after a multi-line condition
+  - trailing_comma                # swift-format adds trailing commas to multi-line collections
+  - vertical_parameter_alignment  # swift-format indents wrapped parameters instead of aligning them
+  - todo                          # TODO comments are fine; track the work in an issue
+
+opt_in_rules:
+  - accessibility_label_for_image  # VoiceOver needs a label for every meaningful image
+  - contains_over_filter_count
+  - contains_over_first_not_nil
+  - discouraged_optional_boolean
+  - empty_count
+  - empty_string
+  - fatal_error_message
+  - first_where
+  - flatmap_over_map_reduce
+  - identical_operands
+  - last_where
+  - legacy_multiple
+  - private_swiftui_state          # @State belongs to the view that owns it
+  - redundant_nil_coalescing
+  - sorted_first_last
+  - toggle_bool
+  - unowned_variable_capture
+  - weak_delegate
+  - yoda_condition
+
+excluded:
+  - .build
+  - DerivedData
+  - "**/Generated"
+
+line_length:
+  warning: 120  # same as lineLength in .swift-format
+  error: 160
+  ignores_urls: true
+
+identifier_name:
+  excluded:  # short names that are clear in robotics and math code
+    - x
+    - y
+    - z
+    - i
+    - j
+    - dt
+    - id

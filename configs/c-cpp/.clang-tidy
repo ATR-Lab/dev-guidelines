@@ -1,0 +1,91 @@
+# clang-tidy settings for C and C++ in ATR Lab repos.
+#
+# Goal: catch real bugs and outdated C++ with few false alarms. We start from
+# nothing ("-*") and turn on four families, then switch off the checks that are
+# mostly noise in robot code:
+#   bugprone-easily-swappable-parameters  fires on most functions with two doubles
+#   bugprone-narrowing-conversions        fires on every float/double/int mix in sensor code
+#   bugprone-reserved-identifier          ROS 2 header guards (PKG__FILE_HPP_) use "__"
+#   performance-avoid-endl                style, not a real cost in node code
+#   modernize-avoid-bind                  the ROS 2 style allows std::bind; tutorials use it
+#   modernize-avoid-c-arrays              vendor SDKs and C interop need C arrays
+#   modernize-use-nodiscard               would ask for [[nodiscard]] on every getter
+#   modernize-use-trailing-return-type    a style choice we do not make
+#
+# clang-tidy needs to compile each file, so give it a compilation database:
+#   colcon build --cmake-args -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
+#   clang-tidy -p build/<package> src/*.cpp
+# Check list: https://clang.llvm.org/extra/clang-tidy/checks/list.html
+---
+Checks: >
+  -*,
+  bugprone-*,
+  -bugprone-easily-swappable-parameters,
+  -bugprone-narrowing-conversions,
+  -bugprone-reserved-identifier,
+  clang-analyzer-*,
+  performance-*,
+  -performance-avoid-endl,
+  modernize-*,
+  -modernize-avoid-bind,
+  -modernize-avoid-c-arrays,
+  -modernize-use-nodiscard,
+  -modernize-use-trailing-return-type,
+  readability-braces-around-statements,
+  readability-container-size-empty,
+  readability-delete-null-pointer,
+  readability-duplicate-include,
+  readability-else-after-return,
+  readability-identifier-naming,
+  readability-inconsistent-declaration-parameter-name,
+  readability-make-member-function-const,
+  readability-misleading-indentation,
+  readability-redundant-control-flow,
+  readability-redundant-declaration,
+  readability-redundant-smartptr-get,
+  readability-redundant-string-cstr,
+  readability-simplify-boolean-expr,
+  readability-static-accessed-through-instance,
+  readability-string-compare
+
+# Every enabled check fails the build in CI. Keep the list short enough that
+# this stays true.
+WarningsAsErrors: '*'
+
+# Report problems in our own headers (include/ and src/), not in /opt/ros or
+# vendor SDK headers.
+HeaderFilterRegex: '.*/(include|src)/.*'
+
+FormatStyle: file
+
+CheckOptions:
+  # Naming follows the ROS 2 code style: classes in CamelCase, functions and
+  # variables in snake_case, members with a trailing underscore, globals with
+  # a g_ prefix. ROS 2 allows several styles for constants, so we do not
+  # enforce one (aNy_CasE).
+  readability-identifier-naming.NamespaceCase: lower_case
+  readability-identifier-naming.ClassCase: CamelCase
+  readability-identifier-naming.StructCase: CamelCase
+  readability-identifier-naming.UnionCase: CamelCase
+  readability-identifier-naming.EnumCase: CamelCase
+  readability-identifier-naming.TemplateParameterCase: CamelCase
+  readability-identifier-naming.FunctionCase: lower_case
+  readability-identifier-naming.MethodCase: lower_case
+  readability-identifier-naming.ParameterCase: lower_case
+  readability-identifier-naming.VariableCase: lower_case
+  readability-identifier-naming.MemberCase: lower_case
+  readability-identifier-naming.PrivateMemberSuffix: '_'
+  readability-identifier-naming.ProtectedMemberSuffix: '_'
+  readability-identifier-naming.GlobalVariablePrefix: 'g_'
+  readability-identifier-naming.MacroDefinitionCase: UPPER_CASE
+  # Header guards in the cpplint/ROS 2 form: PKG_NAME__FILE_NAME_HPP_
+  readability-identifier-naming.MacroDefinitionIgnoredRegexp: '^[A-Z0-9_]+_(H|HPP)_$'
+  readability-identifier-naming.ConstexprVariableCase: aNy_CasE
+  readability-identifier-naming.GlobalConstantCase: aNy_CasE
+  readability-identifier-naming.StaticConstantCase: aNy_CasE
+  readability-identifier-naming.LocalConstantCase: aNy_CasE
+  readability-identifier-naming.ConstantMemberCase: aNy_CasE
+  readability-identifier-naming.EnumConstantCase: aNy_CasE
+  # ROS 2 subscription callbacks often take the message's shared pointer by value.
+  performance-unnecessary-value-param.AllowedTypes: 'std::shared_ptr;SharedPtr;ConstSharedPtr'
+...

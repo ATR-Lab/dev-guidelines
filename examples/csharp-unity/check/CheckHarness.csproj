@@ -1,0 +1,34 @@
+<!--
+  Compiles the example Unity scripts with the .NET SDK so scripts/check-configs.sh can run the
+  lab's .editorconfig rules and Microsoft.Unity.Analyzers without installing Unity.
+  Not needed in a Unity project: Unity generates its own .csproj files.
+  Tested with .NET SDK 10.0 and Microsoft.Unity.Analyzers 1.28.0 (Sept. 30, 2026).
+-->
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <!-- Unity 6 compiles C# 9.0. -->
+    <LangVersion>9.0</LangVersion>
+    <Nullable>disable</Nullable>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <!-- Run the .editorconfig code-style rules (IDE0055, IDE1006 ...) during the build. -->
+    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+    <!-- IDE0005 (unused usings) only runs on build when XML docs are generated. -->
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="UnityEngineStubs.cs" />
+    <Compile Include="../Assets/**/*.cs" Condition="'$(CheckBad)' != 'true'" />
+    <!-- dotnet build -p:CheckBad=true compiles the deliberately bad examples instead. -->
+    <Compile Include="../bad/**/*.cs" Condition="'$(CheckBad)' == 'true'" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Unity.Analyzers" Version="1.28.0" PrivateAssets="all" />
+  </ItemGroup>
+
+</Project>

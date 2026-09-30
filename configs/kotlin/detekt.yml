@@ -1,0 +1,41 @@
+# detekt settings for Kotlin in ATR Lab repos: only the changes from detekt's defaults.
+# Run with --build-upon-default-config (Gradle: buildUponDefaultConfig = true) so
+# every other rule keeps its default. ktlint handles formatting, so the
+# detekt-formatting plugin is not used.
+# Tested with detekt 1.23.8 (Sept. 30, 2026). Rules: https://detekt.dev/docs/1.23.8/rules/complexity
+
+config:
+  validation: true
+
+complexity:
+  LongParameterList:
+    # Compose functions take many parameters with defaults.
+    ignoreAnnotated: ['Composable']
+  TooManyFunctions:
+    thresholdInFiles: 15
+    thresholdInClasses: 15
+
+naming:
+  FunctionNaming:
+    # Compose functions are named like types: HeartRateCard().
+    ignoreAnnotated: ['Composable']
+  TopLevelPropertyNaming:
+    constantPattern: '[A-Z][A-Z0-9_]*'
+
+style:
+  MaxLineLength:
+    # Same limit as ktlint (.editorconfig max_line_length).
+    maxLineLength: 100
+  MagicNumber:
+    ignorePropertyDeclaration: true
+    ignoreCompanionObjectPropertyDeclaration: true
+    ignoreAnnotated: ['Composable', 'Preview']
+  WildcardImport:
+    # Android Kotlin style guide: no wildcard imports of any kind (the default allows java.util.*).
+    excludeImports: []
+  UnusedPrivateMember:
+    # @Preview functions are used by Android Studio, not by code.
+    ignoreAnnotated: ['Preview']
+  ForbiddenComment:
+    # TODO and FIXME are fine; track the work in an issue.
+    comments: ['STOPSHIP']

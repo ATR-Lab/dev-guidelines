@@ -1,0 +1,160 @@
+# EditorConfig for C# in ATR Lab repos: Unity 6 projects (VR/XR teleoperation) and plain .NET.
+#
+# Rider, Visual Studio and VS Code (C# Dev Kit, Unity extension) read this file for formatting,
+# naming and analyzer severities. `dotnet format` and `dotnet build` read it for .NET projects.
+# Tested with .NET SDK 10.0 and Microsoft.Unity.Analyzers 1.28.0 (Sept. 30, 2026).
+#
+# Unity notes (details in docs/csharp-unity.md):
+# - Put this file at the repo root, next to Assets/. Unity leaves .editorconfig alone.
+# - Unity 6 compiles C# 9.0, so file-scoped namespaces and other C# 10+ features are out.
+# - The Unity manual documents setting analyzer severities in a root .editorconfig
+#   (dotnet_diagnostic.<ID>.severity) or in Assets/Default.ruleset; check the Console to
+#   confirm which one your Unity version honors.
+# - Naming (IDE1006) and formatting (IDE0055) are .NET code-style rules: your editor shows
+#   them while you type; CI checks them with `dotnet format`.
+#
+# Naming follows Microsoft's C# conventions (PascalCase members, _camelCase private fields,
+# s_camelCase private static fields), which Unity's C# style guide lists as an option.
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+indent_style = space
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+# Unity writes these files itself. Leave them exactly as Unity saves them.
+[*.{unity,prefab,asset,meta,mat,anim,controller,overrideController,physicMaterial,mask,mixer,playable,signal,renderTexture,spriteatlas,shadervariants,lighting,terrainlayer,brush,flare,fontsettings,guiskin,giparams,cubemap}]
+charset = unset
+end_of_line = unset
+indent_style = unset
+insert_final_newline = unset
+trim_trailing_whitespace = unset
+
+[*.{csproj,props,targets,xml,json,asmdef,asmref,inputactions}]
+indent_size = 2
+
+[*.cs]
+indent_size = 4
+max_line_length = 120
+
+#### Formatting (IDE0055): Allman braces, as in Microsoft's C# conventions ####
+csharp_new_line_before_open_brace = all
+csharp_new_line_before_else = true
+csharp_new_line_before_catch = true
+csharp_new_line_before_finally = true
+csharp_new_line_before_members_in_object_initializers = true
+csharp_new_line_before_members_in_anonymous_types = true
+csharp_indent_case_contents = true
+csharp_indent_switch_labels = true
+csharp_space_after_cast = false
+csharp_space_after_keywords_in_control_flow_statements = true
+csharp_preserve_single_line_statements = false
+csharp_preserve_single_line_blocks = true
+dotnet_sort_system_directives_first = true
+dotnet_separate_import_directive_groups = false
+
+#### Code style ####
+csharp_prefer_braces = true:warning
+csharp_using_directive_placement = outside_namespace:warning
+csharp_style_namespace_declarations = block_scoped:warning
+dotnet_style_require_accessibility_modifiers = for_non_interface_members:warning
+dotnet_style_qualification_for_field = false:warning
+dotnet_style_qualification_for_property = false:warning
+dotnet_style_qualification_for_method = false:warning
+dotnet_style_qualification_for_event = false:warning
+dotnet_style_predefined_type_for_locals_parameters_members = true:warning
+csharp_style_var_for_built_in_types = false:suggestion
+csharp_style_var_when_type_is_apparent = true:suggestion
+csharp_style_expression_bodied_methods = when_on_single_line:suggestion
+csharp_style_expression_bodied_properties = true:suggestion
+
+#### Naming (IDE1006) ####
+# Symbol groups
+dotnet_naming_symbols.interfaces.applicable_kinds = interface
+dotnet_naming_symbols.type_parameters.applicable_kinds = type_parameter
+dotnet_naming_symbols.types.applicable_kinds = class, struct, enum, delegate
+dotnet_naming_symbols.non_field_members.applicable_kinds = property, event, method, local_function
+dotnet_naming_symbols.constants.applicable_kinds = field
+dotnet_naming_symbols.constants.required_modifiers = const
+dotnet_naming_symbols.public_fields.applicable_kinds = field
+dotnet_naming_symbols.public_fields.applicable_accessibilities = public, protected, protected_internal
+dotnet_naming_symbols.private_static_fields.applicable_kinds = field
+dotnet_naming_symbols.private_static_fields.applicable_accessibilities = private, internal, private_protected
+dotnet_naming_symbols.private_static_fields.required_modifiers = static
+dotnet_naming_symbols.private_fields.applicable_kinds = field
+dotnet_naming_symbols.private_fields.applicable_accessibilities = private, internal, private_protected
+dotnet_naming_symbols.locals_and_parameters.applicable_kinds = parameter, local
+
+# Styles
+dotnet_naming_style.pascal_case.capitalization = pascal_case
+dotnet_naming_style.camel_case.capitalization = camel_case
+dotnet_naming_style.i_prefix.capitalization = pascal_case
+dotnet_naming_style.i_prefix.required_prefix = I
+dotnet_naming_style.t_prefix.capitalization = pascal_case
+dotnet_naming_style.t_prefix.required_prefix = T
+dotnet_naming_style.underscore_camel_case.capitalization = camel_case
+dotnet_naming_style.underscore_camel_case.required_prefix = _
+dotnet_naming_style.s_camel_case.capitalization = camel_case
+dotnet_naming_style.s_camel_case.required_prefix = s_
+
+# Rules (the SDK orders them from most to least specific)
+dotnet_naming_rule.interfaces_start_with_i.symbols = interfaces
+dotnet_naming_rule.interfaces_start_with_i.style = i_prefix
+dotnet_naming_rule.interfaces_start_with_i.severity = warning
+dotnet_naming_rule.type_parameters_start_with_t.symbols = type_parameters
+dotnet_naming_rule.type_parameters_start_with_t.style = t_prefix
+dotnet_naming_rule.type_parameters_start_with_t.severity = warning
+dotnet_naming_rule.types_are_pascal_case.symbols = types
+dotnet_naming_rule.types_are_pascal_case.style = pascal_case
+dotnet_naming_rule.types_are_pascal_case.severity = warning
+dotnet_naming_rule.members_are_pascal_case.symbols = non_field_members
+dotnet_naming_rule.members_are_pascal_case.style = pascal_case
+dotnet_naming_rule.members_are_pascal_case.severity = warning
+dotnet_naming_rule.constants_are_pascal_case.symbols = constants
+dotnet_naming_rule.constants_are_pascal_case.style = pascal_case
+dotnet_naming_rule.constants_are_pascal_case.severity = warning
+dotnet_naming_rule.public_fields_are_pascal_case.symbols = public_fields
+dotnet_naming_rule.public_fields_are_pascal_case.style = pascal_case
+dotnet_naming_rule.public_fields_are_pascal_case.severity = warning
+dotnet_naming_rule.private_static_fields_are_s_camel_case.symbols = private_static_fields
+dotnet_naming_rule.private_static_fields_are_s_camel_case.style = s_camel_case
+dotnet_naming_rule.private_static_fields_are_s_camel_case.severity = warning
+dotnet_naming_rule.private_fields_are_underscore_camel_case.symbols = private_fields
+dotnet_naming_rule.private_fields_are_underscore_camel_case.style = underscore_camel_case
+dotnet_naming_rule.private_fields_are_underscore_camel_case.severity = warning
+dotnet_naming_rule.locals_and_parameters_are_camel_case.symbols = locals_and_parameters
+dotnet_naming_rule.locals_and_parameters_are_camel_case.style = camel_case
+dotnet_naming_rule.locals_and_parameters_are_camel_case.severity = warning
+
+#### Analyzer severities ####
+# Unnecessary using directive
+dotnet_diagnostic.IDE0005.severity = warning
+# Add braces
+dotnet_diagnostic.IDE0011.severity = warning
+# Add accessibility modifiers
+dotnet_diagnostic.IDE0040.severity = warning
+# Formatting
+dotnet_diagnostic.IDE0055.severity = warning
+# Naming
+dotnet_diagnostic.IDE1006.severity = warning
+
+# Microsoft.Unity.Analyzers (bundled with Visual Studio's Unity workload and the VS Code Unity
+# extension; NuGet package for other setups). Their default severity is "info", which is easy to
+# miss, so the rules that point at real bugs or per-frame allocations are raised to warnings.
+# Rule list: https://github.com/microsoft/Microsoft.Unity.Analyzers/blob/main/doc/index.md
+# Empty Unity message (Update with no body still costs a call)
+dotnet_diagnostic.UNT0001.severity = warning
+# Inefficient tag comparison; use CompareTag
+dotnet_diagnostic.UNT0002.severity = warning
+# Incorrect Unity message signature
+dotnet_diagnostic.UNT0006.severity = warning
+# Null coalescing (??) on Unity objects
+dotnet_diagnostic.UNT0007.severity = warning
+# Null propagation (?.) on Unity objects
+dotnet_diagnostic.UNT0008.severity = warning
+# GetComponent always allocates; use TryGetComponent
+dotnet_diagnostic.UNT0026.severity = warning
+# Pattern matching with null (is null) on Unity objects
+dotnet_diagnostic.UNT0029.severity = warning

@@ -1,0 +1,53 @@
+name: configs
+
+# Proves every config in configs/ works: each formatter and linter must accept the samples in
+# examples/ and reject the deliberately bad samples in examples/<language>/bad/.
+on:
+  push:
+    branches: [master]
+    paths:
+      - "configs/**"
+      - "examples/**"
+      - "templates/**"
+      - "scripts/check-configs.sh"
+      - ".github/workflows/configs.yml"
+  pull_request:
+    paths:
+      - "configs/**"
+      - "examples/**"
+      - "templates/**"
+      - "scripts/check-configs.sh"
+      - ".github/workflows/configs.yml"
+  schedule:
+    - cron: "0 9 1 * *" # First of each month: catch breakage from new base images
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    name: ${{ matrix.name }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - name: EditorConfig and Markdown
+            languages: editorconfig markdown
+          # The Python job also runs the ROS 2 linters, which need the C++ job's image,
+          # so the two share a job.
+          - name: C, C++ and Python (ROS 2 Jazzy)
+            languages: c-cpp python
+          - name: JavaScript and TypeScript
+            languages: javascript-typescript
+          - name: Swift
+            languages: swift
+          - name: Kotlin
+            languages: kotlin
+          - name: C# and Unity
+            languages: csharp-unity
+    steps:
+      - uses: actions/checkout@v7
+      - name: Run the checks
+        run: scripts/check-configs.sh ${{ matrix.languages }}

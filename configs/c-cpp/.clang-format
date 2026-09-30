@@ -1,0 +1,38 @@
+# clang-format settings for C and C++ in ATR Lab repos (ROS 2 style).
+#
+# This is the ROS 2 configuration exactly as ament_clang_format ships it
+# (github.com/ament/ament_lint, ament_clang_format/configuration/.clang-format;
+# identical on the jazzy, kilted, lyrical and rolling branches, checked
+# Sept. 30, 2026). Keeping it identical means format-on-save in your editor and
+# `ament_clang_format` in `colcon test` always agree, with no extra settings.
+#
+# Do not edit the rules. If a repo truly needs a change, also pass the file to
+# ament_clang_format with `--config`, and say why in the pull request.
+#
+# In ROS 2 packages, run ament_clang_format instead of ament_uncrustify: the two
+# formatters disagree on lambdas, one-line functions and constructor
+# initializer lists, so a file cannot satisfy both. See docs/c-cpp.md.
+#
+# clang-format applies the "Cpp" settings to C files too, so firmware written in
+# C uses the same file.
+# Options reference: https://clang.llvm.org/docs/ClangFormatStyleOptions.html
+---
+Language: Cpp
+BasedOnStyle: Google
+
+AccessModifierOffset: -2
+AlignAfterOpenBracket: AlwaysBreak
+BraceWrapping:
+  AfterClass: true
+  AfterFunction: true
+  AfterNamespace: true
+  AfterStruct: true
+  AfterEnum: true
+BreakBeforeBraces: Custom
+ColumnLimit: 100
+ConstructorInitializerIndentWidth: 0
+ContinuationIndentWidth: 2
+DerivePointerAlignment: false
+PointerAlignment: Middle
+ReflowComments: false
+...

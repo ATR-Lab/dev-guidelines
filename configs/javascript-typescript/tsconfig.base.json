@@ -1,0 +1,33 @@
+// Strict base settings for ATR Lab TypeScript projects (tested with typescript 6.0.3,
+// Sept. 30, 2026). Extend it from your tsconfig.json and set include, outDir and lib there:
+//   { "extends": "./tsconfig.base.json", "compilerOptions": { "outDir": "dist" }, "include": ["src"] }
+// TypeScript 6 no longer loads every installed @types package: list the ones you use, for
+// example "types": ["node"] for a Node.js server.
+// Options reference: https://www.typescriptlang.org/tsconfig/
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+
+    // Type safety
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+    "noImplicitOverride": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "noPropertyAccessFromIndexSignature": true,
+
+    // Module hygiene: imports compile the way they are written
+    "verbatimModuleSyntax": true,
+    "isolatedModules": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+
+    // Output
+    "declaration": true,
+    "sourceMap": true,
+    "skipLibCheck": true
+  }
+}

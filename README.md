@@ -1,130 +1,131 @@
-# dev-guidelines
-Software and hardware development guidelines
+<p align="center">
+  <img src=".github/assets/header.png" alt="Dev guidelines: Style guides, lint configs and Git practices. Advanced Telerobotics Research Lab, Kent State University." width="100%">
+</p>
 
-## Table of Contents
+<p align="center">
+  <b>Style guides, copy-ready lint configs and Git practices for every code repo of the Advanced Telerobotics Research Lab, written for lab members and the coding agents that work with them.</b><br>
+  <sub>Advanced Telerobotics Research Lab · Department of Computer Science · Kent State University</sub>
+</p>
 
-- [Software](#project-structure)
-	- [Styleguides](#styleguides)
-	- [Documentation](#documentation)
-	- [Dependency Management](#dependency-management)
-	- [Version Control](#version-control)
-	- [GitHub](#github)
-	- [Software Releases](#software-releases)
-	- [Tools](#tools)
-	- [IDEs](#ides)
-	- [Middleware and Frameworks](#middleware-and-frameworks)
-- [Hardware](#hardware)
+<p align="center">
+  <a href="LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/license-MIT-003976?style=flat-square"></a>
+  <a href="https://www.atr.cs.kent.edu/"><img alt="Advanced Telerobotics Research Lab, Kent State University" src="https://img.shields.io/badge/ATR_Lab-Kent_State-003976?style=flat-square"></a>
+  <img alt="Last reviewed Sept. 2026" src="https://img.shields.io/badge/last_reviewed-Sept._2026-4A5868?style=flat-square">
+</p>
 
+## Start here
 
+<table>
+  <tr>
+    <td width="33%" valign="top">
+      <img src=".github/assets/icons/code.png" width="44" alt=""><br>
+      <b><a href="docs/README.md">Language guides</a></b><br>
+      <sub>C and C++, Python, TypeScript, Swift, Kotlin, C# and Unity: style, tools and CI.</sub>
+    </td>
+    <td width="33%" valign="top">
+      <img src=".github/assets/icons/mechanical-gear.png" width="44" alt=""><br>
+      <b><a href="configs/README.md">Copy-ready configs</a></b><br>
+      <sub>Formatter and linter files for each language, with the versions we tested.</sub>
+    </td>
+    <td width="33%" valign="top">
+      <img src=".github/assets/icons/milestone-flag.png" width="44" alt=""><br>
+      <b><a href="docs/git-and-github.md">Git and GitHub</a></b><br>
+      <sub>Branches, commit messages, pull requests, releases, Git LFS and secrets.</sub>
+    </td>
+  </tr>
+  <tr>
+    <td width="33%" valign="top">
+      <img src=".github/assets/icons/ros-graph.png" width="44" alt=""><br>
+      <b><a href="docs/ros2-packages.md">ROS 2 packages</a></b><br>
+      <sub>Naming, layout, ament linters, units, frames, launch files and parameters.</sub>
+    </td>
+    <td width="33%" valign="top">
+      <img src=".github/assets/icons/embedded-chip.png" width="44" alt=""><br>
+      <b><a href="docs/hardware.md">Hardware and firmware</a></b><br>
+      <sub>CAD versions, BOMs, PlatformIO firmware, wiring colors and 3D prints.</sub>
+    </td>
+    <td width="33%" valign="top">
+      <img src=".github/assets/icons/ai-neural-net.png" width="44" alt=""><br>
+      <b><a href="docs/ai-assisted-development.md">AI-assisted development</a></b><br>
+      <sub>Rules for Claude Code, Codex and other coding agents in lab repos.</sub>
+    </td>
+  </tr>
+  <tr>
+    <td width="33%" valign="top">
+      <img src=".github/assets/icons/publication.png" width="44" alt=""><br>
+      <b><a href="docs/documentation.md">Documentation</a></b><br>
+      <sub>READMEs, docstrings, AGENTS.md, diagrams and changelogs.</sub>
+    </td>
+    <td width="33%" valign="top">
+      <img src=".github/assets/icons/workshop-idea.png" width="44" alt=""><br>
+      <b><a href="templates/README.template.md">Templates</a></b><br>
+      <sub>README and AGENTS.md templates for new lab project repos.</sub>
+    </td>
+    <td width="33%" valign="top">
+      <img src=".github/assets/icons/results-chart.png" width="44" alt=""><br>
+      <b><a href="examples/README.md">Tested examples</a></b><br>
+      <sub>Sample code that passes every config, and bad samples that must fail.</sub>
+    </td>
+  </tr>
+</table>
 
-## Software
+## Language matrix
 
-One's profession should not be measured by the actions that are taken, but rather by the end-goal and the means of achieving such goal.
+The six languages the lab uses most. Each row links to its guide, which has the exact check commands; the config folder holds files you can copy as they are.
 
-Anyone can program, not everyone can develop scalable, robust, and maintainable software. Let's aim for that...
+| Language | Style guide we follow | Formatter | Linter | Config folder |
+|---|---|---|---|---|
+| [C and C++](docs/c-cpp.md) | [ROS 2 code style](https://docs.ros.org/en/jazzy/The-ROS2-Project/Contributing/Code-Style-Language-Versions.html) (Google C++ with ROS 2 changes) | clang-format | clang-tidy; `ament_cpplint` in ROS 2 packages | [`configs/c-cpp/`](configs/c-cpp/) |
+| [Python](docs/python.md) | [PEP 8](https://peps.python.org/pep-0008/), [Google docstrings](https://google.github.io/styleguide/pyguide.html#s3.8-comments-and-docstrings) | Ruff | Ruff, mypy | [`configs/python/`](configs/python/) |
+| [JavaScript and TypeScript](docs/javascript-typescript.md) | typescript-eslint strict rules, Prettier defaults | Prettier | ESLint with typescript-eslint, `tsc` | [`configs/javascript-typescript/`](configs/javascript-typescript/) |
+| [Swift](docs/swift.md) | [Swift API Design Guidelines](https://www.swift.org/documentation/api-design-guidelines/) | swift-format | SwiftLint | [`configs/swift/`](configs/swift/) |
+| [Kotlin](docs/kotlin.md) | [Kotlin coding conventions](https://kotlinlang.org/docs/coding-conventions.html), [Android Kotlin style guide](https://developer.android.com/kotlin/style-guide) | ktlint (`--format`) | ktlint, detekt | [`configs/kotlin/`](configs/kotlin/) |
+| [C# and Unity](docs/csharp-unity.md) | [Microsoft C# conventions](https://learn.microsoft.com/en-us/dotnet/csharp/fundamentals/coding-style/coding-conventions), [Unity C# style guide](https://unity.com/resources/c-sharp-style-guide-unity-6) | `dotnet format`, your IDE | Roslyn analyzers, Microsoft.Unity.Analyzers | [`configs/csharp-unity/`](configs/csharp-unity/) |
 
-You may find a list of useful books and [resources here](https://github.com/kPatch/awesome-developer-resources/blob/master/README.md#software-engineering).
+Every repo also gets the shared [`.editorconfig`](configs/editorconfig/.editorconfig) and, for Markdown, [`.markdownlint.jsonc`](configs/markdown/.markdownlint.jsonc). Arduino, Java, MATLAB, Solidity and Ada: see [Other languages](docs/other-languages.md).
 
-### Styleguides
+## Quick start
 
-- [Arduino](https://www.arduino.cc/en/Reference/StyleGuide)
-- [Ada]()
-- [C](http://www.maultech.com/chrislott/resources/cstyle/indhill-cstyle.pdf)
-- [C++](https://google.github.io/styleguide/cppguide.html)
-- [Java](https://google.github.io/styleguide/javaguide.html)
-- [JavaScript](https://github.com/feross/standard)
-- [MATLAB](https://sites.google.com/site/matlabstyleguidelines/)
-- [Python](https://google.github.io/styleguide/pyguide.html)
-- [Solidity](http://solidity.readthedocs.io/en/develop/style-guide.html)
+1. **New to the lab's code?** Read [Git and GitHub](docs/git-and-github.md), then the guide for your language.
+2. **Setting up a repo?** Copy the configs for its languages (each guide has a copy command), add the CI snippet from the guide and start the README and `AGENTS.md` from the [templates](templates/).
+3. **Changing a config here?** Run the checks, which need only Docker:
 
-### Documentation
+   ```bash
+   scripts/check-configs.sh            # all languages
+   scripts/check-configs.sh python     # one language
+   ```
 
-Self describing, terse code should be the norm. But, often times the complexity .... 
+## Repo map
 
-- [Beginners Guide To Docs](http://www.writethedocs.org/guide/writing/beginners-guide-to-docs/)
-- [RTFM? How to write a manual worth reading](https://opensource.com/business/15/5/write-better-docs)
+| Path | What it holds | Read it when |
+|---|---|---|
+| [`docs/`](docs/README.md) | One guide per topic: Git, documentation, AI agents, six languages, ROS 2 packages, hardware, other languages | You want the rules and the reasons |
+| [`configs/`](configs/README.md) | Copy-ready formatter and linter configs (one folder per language) and the tested versions | You set up or update a repo |
+| [`examples/`](examples/README.md) | Samples that pass each config; `bad/` samples that must fail | You want to see the style in real code, or you change a config |
+| [`templates/`](templates/) | `README.template.md` and `AGENTS.template.md` for lab project repos | You start a new repo |
+| [`scripts/check-configs.sh`](scripts/check-configs.sh) | Runs every tool against `examples/` in Docker | You change a config or a tool version |
+| [`.github/workflows/`](.github/workflows/) | `configs.yml` runs the checks; `docs.yml` lints Markdown and checks links | You wonder what CI does |
+| [`AGENTS.md`](AGENTS.md) | Instructions and repo map for coding agents (`CLAUDE.md` points to it) | You are, or you are directing, a coding agent |
 
-### Dependency Management
+## Contributing
 
-- [Gradle](https://gradle.org)
+Suggest a change by [opening an issue](https://github.com/ATR-Lab/dev-guidelines/issues/new) or a pull request. Change one topic per pull request, and for a config change, say why and run `scripts/check-configs.sh` for that language. Writing rules, sources and checks for this repo are in [`AGENTS.md`](AGENTS.md); people and agents follow the same ones.
 
-### Version Control
+## License
 
-We use [Git](https://git-scm.com/) as our version control system [(VCS)](https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control) and [GitHub](https://github.com/ATR-Lab) as our open-source Git hosting service.  
-Below are some quick rules to follow when working with a version control system, specifically Git:
+Text and code in this repository are released under the [MIT License](LICENSE). The names and logos of the Advanced Telerobotics Research Lab and Kent State University are trademarks and are not covered by that license.
 
-1. Make sure the build succeeds before committing.  
-**Rationale**: Broken code should not be committed.
+The seven commit message rules in [Git and GitHub](docs/git-and-github.md#commit-messages) are quoted from Chris Beams' post "[How to Write a Git Commit Message](https://cbea.ms/git-commit/)", with credit. The `.clang-format` rules come from the ROS 2 [ament_lint](https://github.com/ament/ament_lint) project (Apache License 2.0).
 
-2. Create feature branches.  
-**Rationale**: Changes to a branch don’t affect other developers on the team. This is a good thing because a feature under development can create instability.
+---
 
-3. Pull down the latest changes before beginning to code.  
-**Rationale**: Keep you local version up to date. This is crucial if you’re working on feature branch, don’t let your branch diverge too far from the master branch.
-
-4. Use meaningful and succinct git messages.  
-**Rationale**: “A commit message shows whether a developer is a good collaborator”. **A project’s long-term success rests (among other things) on its maintainability** and being able to review others’ commits and pull requests with ease.  
-This drives efficiency.
-
-- [A Successful Git Branching Model](http://nvie.com/posts/a-successful-git-branching-model/)
-
-#### Git Messages
-
-When [committing](http://dont-be-afraid-to-commit.readthedocs.io/en/latest/git/commandlinegit.html) code into a Git repository, you will have to write a message describing your code changes.  
-It is crucial that we make these messages concise and consistent. A well-crafted commit message can tell other developers right away why your code changes matter or why they took place.  
-  
-Chris Beams has a great [post](https://chris.beams.io/posts/git-commit/) that summarizes the importance of a well-crafted commit message, along with the rationale behind it. Below are the seven rules he writes in his post, check out his post for more information.
-    
-**The seven rules of a great Git commit message**  
-1. Separate subject from body with a blank line
-2. Limit the subject line to 50 characters
-3. Capitalize the subject line
-4. Do not end the subject line with a period
-5. Use the imperative mood in the subject line
-6. Wrap the body at 72 characters
-7. Use the body to explain what and why vs. how
-
-- [How to Write a Git Commit Message](http://chris.beams.io/posts/git-commit/)
-
-#### Gitignore
-
-[What is .gitignore?](http://stackoverflow.com/questions/27850222/what-is-gitignore-exactly/27850270)
-
-- A collection of useful [.gitignore templates](https://github.com/github/gitignore)
-- The [Ignoring Files chapter](https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository#Ignoring-Files) of the Pro Git book.
-- The [Ignoring Files article](https://help.github.com/articles/ignoring-files/) on the GitHub Help site.
-- The [gitignore(5)](https://git-scm.com/docs/gitignore) manual page.
-
-### GitHub
-- [Referencing / closing issues using keywords](https://help.github.com/en/articles/closing-issues-using-keywords)
-
-### Software Releases
-- [GitHub: Creating Releases](https://help.github.com/en/articles/creating-releases)
-- [Drupal: Release Types](https://www.drupal.org/node/467020)
-- [Drupal: Release - rc, alpha, beta, dev](https://drupal.stackexchange.com/questions/99612/what-does-rc-stand-for-when-to-use-alpha-beta-and-dev-instead)
-- [Drupal: Release Naming Conventions](https://www.drupal.org/node/1015226)
-- [StackOverflow: Release Title is Same as Release Version](https://softwareengineering.stackexchange.com/questions/345006/why-popular-repositories-use-release-version-as-a-release-title-in-github)
-
-### Tools
-
-Know your tools, from debuggers, to profilers, to IDEs.
-
-### IDEs
-
-#### IntelliJ
-
-#### Eclipse
-
-### Middleware and Frameworks
-
-#### ROS
-- Check what packages are available before development. http://www.ros.org/browse/list.php
-- Packages vs Nodes
-  - https://answers.ros.org/question/9133/packages-vs-nodes/
-  - https://answers.ros.org/question/11835/when-should-i-split-my-code-into-multiple-packages-and-whats-a-good-way-to-split-it/
-- Standard Units of Measure and Coordinate Conventions
-  - http://www.ros.org/reps/rep-0103.html
-
-## Hardware
-
-### Tools
+<p align="center">
+  <sub><b>ATR Lab docs</b> ·
+  <a href="https://github.com/ATR-Lab/about">About the lab</a> ·
+  <a href="https://github.com/ATR-Lab/getting-started-atr-lab">Getting started</a> ·
+  <a href="https://github.com/ATR-Lab/dev-guidelines">Dev guidelines</a> ·
+  <a href="https://github.com/ATR-Lab/all-things-ros2">All things ROS 2</a> ·
+  <a href="https://github.com/ATR-Lab">All repositories</a></sub><br>
+  <sub>Advanced Telerobotics Research Lab · Department of Computer Science · Kent State University ·
+  <a href="https://www.atr.cs.kent.edu/">www.atr.cs.kent.edu</a></sub>
+</p>
