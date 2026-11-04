@@ -1,6 +1,6 @@
 # AGENTS.md: dev-guidelines
 
-This repo is the Advanced Telerobotics Research Lab's development standard. It covers the Git and GitHub workflow, documentation and AI-agent rules, one style guide per language (C and C++, Python, JavaScript and TypeScript, Swift, Kotlin, C# and Unity) and conventions for ROS 2 packages and hardware. It also holds copy-ready formatter and linter configs that `scripts/check-configs.sh` tests against sample code. Lab members read it when they start or review code; coding agents read it before working in any lab repo. It is **not** a ROS 2 tutorial (that is `all-things-ros2`), not lab onboarding or safety rules (`getting-started-atr-lab`) and not a description of the lab (`about`).
+This repo is the Advanced Telerobotics Research Laboratory's development standard. It covers the Git and GitHub workflow, documentation and AI-agent rules, one style guide per language (C and C++, Python, JavaScript and TypeScript, Swift, Kotlin, C# and Unity) and conventions for ROS 2 packages and hardware. It also holds copy-ready formatter and linter configs that `scripts/check-configs.sh` tests against sample code. Lab members read it when they start or review code; coding agents read it before working in any lab repo. It is **not** a ROS 2 tutorial (that is `all-things-ros2`), not lab onboarding or safety rules (`getting-started-atr-lab`) and not a description of the lab (`about`).
 
 ## Repo map
 

@@ -87,4 +87,4 @@ If you use this work in a publication, please cite:
 
 ---
 
-Advanced Telerobotics Research Lab · Department of Computer Science · Kent State University
+Advanced Telerobotics Research Laboratory · Department of Computer Science · Kent State University

@@ -1,4 +1,4 @@
-# Copyright 2026 Advanced Telerobotics Research Lab contributors, Kent State University
+# Copyright 2026 Advanced Telerobotics Research Laboratory contributors, Kent State University
 # SPDX-License-Identifier: MIT
 
 """Summary statistics for recorded teleoperation episodes."""

@@ -1,16 +1,16 @@
 <p align="center">
-  <img src=".github/assets/header.png" alt="Dev guidelines: Style guides, lint configs and Git practices. Advanced Telerobotics Research Lab, Kent State University." width="100%">
+  <img src=".github/assets/header.png" alt="Dev guidelines: Style guides, lint configs and Git practices. Advanced Telerobotics Research Laboratory, Kent State University." width="100%">
 </p>
 
 <p align="center">
-  <b>Style guides, copy-ready lint configs and Git practices for every code repo of the Advanced Telerobotics Research Lab, written for lab members and the coding agents that work with them.</b><br>
-  <sub>Advanced Telerobotics Research Lab · Department of Computer Science · Kent State University</sub>
+  <b>Style guides, copy-ready lint configs and Git practices for every code repo of the Advanced Telerobotics Research Laboratory, written for lab members and the coding agents that work with them.</b><br>
+  <sub>Advanced Telerobotics Research Laboratory · Department of Computer Science · Kent State University</sub>
 </p>
 
 <p align="center">
   <a href="LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/license-MIT-003976?style=flat-square"></a>
-  <a href="https://www.atr.cs.kent.edu/"><img alt="Advanced Telerobotics Research Lab, Kent State University" src="https://img.shields.io/badge/ATR_Lab-Kent_State-003976?style=flat-square"></a>
-  <img alt="Last reviewed Sept. 2026" src="https://img.shields.io/badge/last_reviewed-Sept._2026-4A5868?style=flat-square">
+  <a href="https://www.atr.cs.kent.edu/"><img alt="Advanced Telerobotics Research Laboratory, Kent State University" src="https://img.shields.io/badge/ATR_Lab-Kent_State-003976?style=flat-square"></a>
+  <img alt="Last reviewed Nov. 2026" src="https://img.shields.io/badge/last_reviewed-Nov._2026-4A5868?style=flat-square">
 </p>
 
 ## Start here
@@ -113,7 +113,7 @@ Suggest a change by [opening an issue](https://github.com/ATR-Lab/dev-guidelines
 
 ## License
 
-Text and code in this repository are released under the [MIT License](LICENSE). The names and logos of the Advanced Telerobotics Research Lab and Kent State University are trademarks and are not covered by that license.
+Text and code in this repository are released under the [MIT License](LICENSE). The names and logos of the Advanced Telerobotics Research Laboratory and Kent State University are trademarks and are not covered by that license.
 
 The seven commit message rules in [Git and GitHub](docs/git-and-github.md#commit-messages) are quoted from Chris Beams' post "[How to Write a Git Commit Message](https://cbea.ms/git-commit/)", with credit. The `.clang-format` rules come from the ROS 2 [ament_lint](https://github.com/ament/ament_lint) project (Apache License 2.0).
 
@@ -126,6 +126,6 @@ The seven commit message rules in [Git and GitHub](docs/git-and-github.md#commit
   <a href="https://github.com/ATR-Lab/dev-guidelines">Dev guidelines</a> ·
   <a href="https://github.com/ATR-Lab/all-things-ros2">All things ROS 2</a> ·
   <a href="https://github.com/ATR-Lab">All repositories</a></sub><br>
-  <sub>Advanced Telerobotics Research Lab · Department of Computer Science · Kent State University ·
+  <sub>Advanced Telerobotics Research Laboratory · Department of Computer Science · Kent State University ·
   <a href="https://www.atr.cs.kent.edu/">www.atr.cs.kent.edu</a></sub>
 </p>
