@@ -112,7 +112,6 @@ Placeholders only the lab can fill. Agents must not fill these by guessing.
 | `docs/git-and-github.md` | `[repo admin: lab manager to confirm]` | Lab manager (GitHub org owners) |
 | `docs/git-and-github.md` | `[lab contact for security incidents: lab manager to confirm]` | Lab manager |
 | `docs/git-and-github.md` | `[the lab's shared-machine account policy: lab manager to confirm]` | Lab manager |
-| `docs/ai-assisted-development.md` | Which lab work may use AI tools outside Kent State's approved list (Claude Code, Codex); the page limits them to public or non-sensitive code until then | Director, with Kent State Information Security |
 | `docs/hardware.md` | `[cloud CAD workspace: lab manager to confirm]` | Lab manager |
 | `docs/hardware.md` | `[parts ordering process: lab manager to confirm]` | Lab manager |
 | `docs/hardware.md` | `[printer booking process: lab manager to confirm]` | Lab manager |

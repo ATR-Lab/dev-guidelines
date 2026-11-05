@@ -55,7 +55,7 @@ Do not paste these into a prompt or leave them where an agent can read them:
 - **identifiable research data**: anything from human-subjects studies (video, audio, photos, names, questionnaire responses) and any data your IRB protocol or data agreement restricts;
 - unpublished data or text from collaborators without their permission.
 
-Check the tool's data-use terms before you use it for lab work, and follow Kent State's [AI Hub](https://www.kent.edu/ai): it lists the AI tools approved for university use and says tools outside that list (it names Claude and ChatGPT) "may be used for personal/non-sensitive work only, do not input university data." Until the director confirms with Kent State Information Security which lab work those tools may touch, use them only on public or non-sensitive code, such as the lab's open-source repositories. When in doubt, ask your advisor first. The lab's rules for research data are in the [research standards](https://github.com/ATR-Lab/getting-started-atr-lab/blob/master/research/standards.md).
+Check the tool's data-use terms before you use it for lab work, and follow Kent State's [AI Hub](https://www.kent.edu/ai): it lists the AI tools approved for university use and says tools outside that list (it names Claude and ChatGPT) "may be used for personal/non-sensitive work only, do not input university data." The director's rule (Nov. 2026): use those tools only on public or non-sensitive code, such as the lab's open-source repositories. No current lab work involves personal or sensitive data; the lab will set rules before any does. When in doubt, ask your advisor first. The lab's rules for research data are in the [research standards](https://github.com/ATR-Lab/getting-started-atr-lab/blob/master/research/standards.md).
 
 ## Robots and hardware
 
@@ -84,4 +84,4 @@ Agents must never invent results, data or citations. Check that every reference 
 - [Research standards](https://github.com/ATR-Lab/getting-started-atr-lab/blob/master/research/standards.md) and [lab safety guide](https://github.com/ATR-Lab/getting-started-atr-lab/blob/master/lab-rules/safety.md) in Getting started
 - Tool docs: [Claude Code memory and CLAUDE.md](https://code.claude.com/docs/en/memory), [Codex and AGENTS.md](https://learn.chatgpt.com/docs/agent-configuration/agents-md)
 
-<sub>Last reviewed: Sept. 30, 2026 · Sources checked on that date · [Suggest a change](https://github.com/ATR-Lab/dev-guidelines/issues/new)</sub>
+<sub>Last reviewed: Nov. 5, 2026 · Sources checked on that date · [Suggest a change](https://github.com/ATR-Lab/dev-guidelines/issues/new)</sub>
