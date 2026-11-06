@@ -15,6 +15,7 @@ This repo is the Advanced Telerobotics Research Laboratory's development standar
 | `.lycheeignore` | URL patterns the link checker skips: sites that block bots and template placeholders |
 | `.github/workflows/docs.yml` | CI: markdownlint and lychee link check |
 | `.github/workflows/configs.yml` | CI: runs `scripts/check-configs.sh`, one job per language |
+| `.github/workflows/version-check.yml` | Weekly (Mondays): Claude checks the software facts on these pages against current sources and opens a pull request on `automation/version-updates`; review its sources before merging. Logic in `ATR-Lab/.github` (`tools/docs-version-updater/`) |
 | `.github/assets/header.png`, `social-preview.png` | README banner and GitHub social preview (do not regenerate) |
 | `.github/assets/icons/*.png` | Navy icon badges used by the README card grid |
 | `docs/README.md` | Index of all guides |
