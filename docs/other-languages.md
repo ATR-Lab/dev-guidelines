@@ -12,7 +12,7 @@ We don't keep configs for these languages. Follow the official guide below, and 
 | Java | [Google Java Style Guide](https://google.github.io/styleguide/javaguide.html) | Oracle's [Code Conventions for the Java Programming Language](https://www.oracle.com/java/technologies/javase/codeconventions-contents.html) are archived (last revised in 1999). For Android, write new code in [Kotlin](kotlin.md) |
 | MATLAB | MathWorks' [MATLAB Coding Guidelines](https://github.com/mathworks/MATLAB-Coding-Guidelines) (version 1.0, 2025) | For MATLAB R2025a and later. The repo's `codeAnalyzerConfiguration.json` lets the MATLAB Code Analyzer flag rule violations in the Editor and in its report; the guidelines link MathWorks' instructions for setting it up |
 | Solidity | [Solidity style guide](https://docs.soliditylang.org/en/latest/style-guide.html) in the official Solidity docs | |
-| Ada | The [Ada 95 Quality and Style Guide](https://www.adaic.org/resources/add_content/docs/95style/html/cover.html) (Ada Information Clearinghouse) | Format with `gnatpp`, the GNAT pretty printer ([GNAT user's guide](https://docs.adacore.com/gnat_ugn-docs/html/gnat_ugn/gnat_ugn/gnat_utility_programs.html)); the language reference is the [Ada 2022 Reference Manual](http://www.ada-auth.org/standards/ada22.html) |
+| Ada | The [Ada 95 Quality and Style Guide](https://www.adaic.org/resources/add_content/docs/95style/html/cover.html) (Ada Information Clearinghouse) | Format with `gnatpp`, the GNAT pretty printer ([GNAT user's guide](https://docs.adacore.com/gnat_ugn-docs/html/gnat_ugn/gnat_ugn/gnat_utility_programs.html)); the language reference is the [Ada 2022 Reference Manual](https://www.adaic.org/ada-resources/standards/ada22/) |
 
 ## What changed from the old list
 
