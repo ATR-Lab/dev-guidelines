@@ -1,0 +1,31 @@
+# EditorConfig for Kotlin (Android, Wear OS) in ATR Lab repos; ktlint reads its settings here.
+# Tested with ktlint 1.8.0 (Sept. 30, 2026). If your repo already has a root .editorconfig
+# (configs/editorconfig/.editorconfig), copy only the [*.{kt,kts}] section into it.
+# ktlint settings: https://ktlint.github.io/ktlint/1.8.0/rules/configuration-ktlint/
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+indent_style = space
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+[*.{kt,kts}]
+indent_size = 4
+# Android Kotlin style guide: "Code has a column limit of 100 characters."
+max_line_length = 100
+# "android_studio" follows the Android Kotlin style guide and Android Studio's own
+# formatter, so Code > Reformat Code and ktlint agree.
+ktlint_code_style = android_studio
+# Jetpack Compose functions (Wear OS UI) are named like types: HeartRateCard().
+ktlint_function_naming_ignore_when_annotated_with = Composable
+# Android Kotlin style guide: "Wildcard imports (of any type) are not allowed."
+# These three lines stop Android Studio from writing them (from ktlint's IntelliJ guide).
+ij_kotlin_name_count_to_use_star_import = 2147483647
+ij_kotlin_name_count_to_use_star_import_for_members = 2147483647
+ij_kotlin_packages_to_use_import_on_demand = unset
+# Trailing commas on declarations, as the Kotlin coding conventions encourage.
+# Android Studio reads the same property.
+ij_kotlin_allow_trailing_comma = true
+ij_kotlin_allow_trailing_comma_on_call_site = false

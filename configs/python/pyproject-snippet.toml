@@ -1,0 +1,38 @@
+# Paste these tables into your project's pyproject.toml, next to ruff.toml.
+# Tested with ruff 0.16.9, mypy 2.3.1 and pyright 1.1.414 (Sept. 30, 2026).
+#
+# Add the dev tools with uv (versions below are the ones we tested):
+#   uv add --dev ruff==0.16.9 mypy==2.3.1 pytest
+
+[dependency-groups]
+dev = [
+  "mypy==2.3.1",
+  "pytest>=8",
+  "ruff==0.16.9",
+]
+
+# mypy is the type checker that gates CI: `uv run mypy .`
+# Docs: https://mypy.readthedocs.io/en/stable/config_file.html
+[tool.mypy]
+python_version = "3.10"
+strict = true
+warn_unreachable = true
+# Keep caches and virtual environments out of the check.
+exclude = ["^\\.venv/", "^build/", "^install/", "^log/"]
+
+# Libraries without type hints: list them here instead of silencing mypy
+# everywhere. Replace the example names with the ones your code imports.
+[[tool.mypy.overrides]]
+module = ["example_untyped_package.*"]
+ignore_missing_imports = true
+
+# pyright powers Pylance in VS Code. "standard" gives fast, low-noise feedback
+# while you type; mypy --strict stays the gate in CI.
+# Docs: https://microsoft.github.io/pyright/#/configuration
+[tool.pyright]
+pythonVersion = "3.10"
+typeCheckingMode = "standard"
+exclude = [".venv", "build", "install", "log"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

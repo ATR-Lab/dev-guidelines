@@ -1,0 +1,24 @@
+# OS and editors
+.DS_Store
+Thumbs.db
+*.swp
+*~
+.idea/
+.vscode/
+
+# Anything a local run of the configs or the examples might create
+node_modules/
+.venv/
+__pycache__/
+*.pyc
+.mypy_cache/
+.ruff_cache/
+.pytest_cache/
+build/
+install/
+log/
+bin/
+obj/
+.build/
+.gradle/
+dist/

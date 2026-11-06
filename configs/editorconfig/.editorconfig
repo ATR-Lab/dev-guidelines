@@ -1,0 +1,77 @@
+# EditorConfig for ATR Lab repos: one file at the repo root sets the basics for every language,
+# so any editor indents and saves files the same way. Formatters (clang-format, ruff, Prettier,
+# swift-format, ktlint, dotnet format) still have the final say; these values match them.
+#
+# Kotlin and C# need extra settings (ktlint style, naming rules, analyzer severities): copy the
+# [*.{kt,kts}] section of configs/kotlin/.editorconfig and the [*.cs] section of
+# configs/csharp-unity/.editorconfig into this file when your repo uses those languages.
+#
+# EditorConfig: https://editorconfig.org (spec: https://spec.editorconfig.org).
+# max_line_length is not in the core spec; some editors and editorconfig-checker read it.
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+indent_style = space
+indent_size = 2
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+# C and C++ (ROS 2 style) and Arduino sketches
+[*.{c,cc,cpp,cxx,h,hh,hpp,hxx,ino}]
+indent_size = 2
+max_line_length = 100
+
+# Python (PEP 8 indentation; 99 columns, as ament_flake8 checks)
+[*.py]
+indent_size = 4
+max_line_length = 99
+
+# Swift (Xcode's default indentation; same numbers as configs/swift/.swift-format)
+[*.swift]
+indent_size = 4
+max_line_length = 120
+
+# Kotlin (Android Kotlin style guide)
+[*.{kt,kts}]
+indent_size = 4
+max_line_length = 100
+
+# C# and Unity scripts
+[*.cs]
+indent_size = 4
+max_line_length = 120
+
+# JavaScript, TypeScript and web files (Prettier printWidth)
+[*.{js,mjs,cjs,jsx,ts,mts,cts,tsx,vue,css,scss,html}]
+indent_size = 2
+max_line_length = 100
+
+# Data, config and robot description files (package.xml, URDF, xacro, launch, YAML)
+[*.{json,jsonc,yml,yaml,toml,xml,launch,urdf,xacro,sdf,srdf,world,rviz}]
+indent_size = 2
+
+[{CMakeLists.txt,*.cmake}]
+indent_size = 2
+
+# Prose wraps in the editor, so no line limit
+[*.md]
+max_line_length = off
+
+# Tabs are part of the syntax here
+[{Makefile,*.mk}]
+indent_style = tab
+
+# Windows scripts
+[*.{bat,cmd,ps1}]
+end_of_line = crlf
+
+# Files that tools write: leave them exactly as the tool saved them
+[*.{unity,prefab,asset,meta,mat,anim,controller,svg,lock}]
+charset = unset
+end_of_line = unset
+indent_style = unset
+indent_size = unset
+insert_final_newline = unset
+trim_trailing_whitespace = unset
