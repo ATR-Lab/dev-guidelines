@@ -56,7 +56,7 @@ The C and C++ standards depend on the ROS 2 distribution. Set them in `CMakeList
 | ROS 2 distribution | C++ | C | Source |
 |---|---|---|---|
 | Humble, Jazzy, Kilted | C++17 | C99 | [Jazzy code style page](https://docs.ros.org/en/jazzy/The-ROS2-Project/Contributing/Code-Style-Language-Versions.html) |
-| Lyrical, Rolling | C++20 | C17 | [Rolling code style page](https://docs.ros.org/en/rolling/The-ROS2-Project/Contributing/Code-Style-Language-Versions.html) |
+| Lyrical, Rolling | C++20 | C17 | [Rolling code style page](https://docs.ros.org/en/rolling/The-ROS2-Project/Contributing/Contributing-to-code/Code-Style-Language-Versions.html) |
 
 Code that must build on more than one distribution targets the oldest one, so C++17 for anything that still runs on Humble or Jazzy. Firmware uses the standard its board's toolchain supports; check the platform's docs.
 
