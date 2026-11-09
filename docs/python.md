@@ -181,7 +181,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
-      - uses: astral-sh/setup-uv@v10
+      - uses: astral-sh/setup-uv@v10.3.3   # setup-uv publishes no major tag, so @v10 does not resolve
       - run: uv sync --dev
       - run: uv run ruff format --check .
       - run: uv run ruff check .
@@ -205,4 +205,4 @@ jobs:
 - Config files: [`configs/python/`](../configs/python/) and the example in [`examples/python/`](../examples/python/)
 - Ruff [rules](https://docs.astral.sh/ruff/rules/), mypy [configuration](https://mypy.readthedocs.io/en/stable/config_file.html), uv [projects guide](https://docs.astral.sh/uv/guides/projects/)
 
-<sub>Last reviewed: Sept. 30, 2026 · Sources checked on that date · [Suggest a change](https://github.com/ATR-Lab/dev-guidelines/issues/new)</sub>
+<sub>Last reviewed: Nov. 9, 2026 · Sources checked on that date · [Suggest a change](https://github.com/ATR-Lab/dev-guidelines/issues/new)</sub>
