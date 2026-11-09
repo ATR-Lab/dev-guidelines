@@ -50,7 +50,7 @@ TypeScript 6 changed a default you will notice: it no longer loads every install
 
 ## Install and editor setup
 
-Install Node.js 24 (the active LTS release until Oct. 20, 2026; see the [Node.js release schedule](https://github.com/nodejs/Release#release-schedule)). ESLint 10 needs Node.js 20.19, 22.13 or 24 and later.
+Install Node.js 24, the version we test the configs with (a maintenance LTS release since Oct. 20, 2026, supported until April 30, 2028; see the [Node.js release schedule](https://github.com/nodejs/Release#release-schedule)). Node.js 26 has been the active LTS release since Oct. 28, 2026; we have not tested the configs on it yet. ESLint 10 needs Node.js 20.19, 22.13 or 24 and later.
 
 macOS:
 
@@ -136,4 +136,4 @@ jobs:
 - [atr-dashboard](https://github.com/ATR-Lab/atr-dashboard): one of the lab's public web projects
 - typescript-eslint [shared configs](https://typescript-eslint.io/users/configs/), ESLint [configuration files](https://eslint.org/docs/latest/use/configure/configuration-files), Prettier [options](https://prettier.io/docs/options), TypeScript [tsconfig reference](https://www.typescriptlang.org/tsconfig/)
 
-<sub>Last reviewed: Sept. 30, 2026 · Sources checked on that date · [Suggest a change](https://github.com/ATR-Lab/dev-guidelines/issues/new)</sub>
+<sub>Last reviewed: Nov. 9, 2026 · Sources checked on that date · [Suggest a change](https://github.com/ATR-Lab/dev-guidelines/issues/new)</sub>
