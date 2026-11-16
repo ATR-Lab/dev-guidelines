@@ -15,3 +15,5 @@
 # Repository-specific
 ^https://journals\.ieeeauthorcenter\.ieee\.org/
 ^https://raw\.githubusercontent\.com/ATR-Lab/dev-guidelines/
+# adaic.org answers link checkers with 202 Accepted; the pages load normally (checked Nov. 16, 2026).
+^https://www\.adaic\.org/
