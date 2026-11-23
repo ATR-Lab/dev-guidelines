@@ -96,7 +96,7 @@ We leave out the quote (`Q`) and trailing-comma (`COM`) rules, because the forma
 uv init --package my_tool         # new project with src/ layout
 cd my_tool
 uv add numpy                       # runtime dependency
-uv add --dev ruff==0.16.9 mypy==2.3.1 pytest
+uv add --dev ruff==0.17.6 mypy==2.3.1 pytest
 uv run pytest                      # runs inside the project's environment
 uvx ruff check .                   # runs a tool without adding it to the project
 ```
@@ -145,7 +145,7 @@ macOS or Linux:
 
 ```bash
 curl -LsSf https://astral.sh/uv/install.sh | sh   # or, on macOS: brew install uv
-uv tool install ruff@0.16.9
+uv tool install ruff@0.17.6
 uv tool install mypy@2.3.1
 ```
 
@@ -167,8 +167,8 @@ VS Code: install **Python** (`ms-python.python`), **Pylance** (`ms-python.vscode
 BASE=https://raw.githubusercontent.com/ATR-Lab/dev-guidelines/master/configs
 curl -fsSLO "$BASE/python/ruff.toml"
 curl -fsSL "$BASE/python/pyproject-snippet.toml"   # read it, then paste the tables into pyproject.toml
-uvx ruff@0.16.9 format .                          # reformat once, in its own commit
-uvx ruff@0.16.9 check --fix .
+uvx ruff@0.17.6 format .                          # reformat once, in its own commit
+uvx ruff@0.17.6 check --fix .
 ```
 
 ## Check in CI
@@ -205,4 +205,4 @@ jobs:
 - Config files: [`configs/python/`](../configs/python/) and the example in [`examples/python/`](../examples/python/)
 - Ruff [rules](https://docs.astral.sh/ruff/rules/), mypy [configuration](https://mypy.readthedocs.io/en/stable/config_file.html), uv [projects guide](https://docs.astral.sh/uv/guides/projects/)
 
-<sub>Last reviewed: Nov. 9, 2026 · Sources checked on that date · [Suggest a change](https://github.com/ATR-Lab/dev-guidelines/issues/new)</sub>
+<sub>Last reviewed: Nov. 23, 2026 · Sources checked on that date · [Suggest a change](https://github.com/ATR-Lab/dev-guidelines/issues/new)</sub>
